@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" manifest="pitch.manifest">
+<head>
+<title>Absolute Pitch</title>
+<meta charset="UTF-8">
+<meta name="description" content="Ear training music app and virtual piano to help you learn perfect pitch, test your aural note recognition and be a better musician">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="pitch.css">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script src="pitch.js"></script>
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "51098723-ae32-4e7d-b8b0-fd1dba8ba7a2", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
+</head>
+
+<body onresize="drawPiano()" onkeydown="keyDown(event.keyCode)" onkeyup="keyUp(event.keyCode)">
+<div data-role="page">
+
+	<div data-role="content">
+		<span class='st_sharethis'></span>
+		<div id="noteName"></div>
+		<canvas id="piano"></canvas>
+	</div>
+	
+	<div data-role="footer" data-tap-toggle="false">
+		<div id="footer">
+			<div data-role="controlgroup" data-type="horizontal" id="footerbuttons">
+			<a href="pitchHelp.htm" target="_blank" data-role="button" data-icon="info" data-iconpos="notext"></a>
+			<a id="optionsButton" href="#optionsPanel" data-role="button" data-icon="grid" data-iconpos="notext"></a>
+			</div>
+			<select data-role="slider" id="playmode" data-mini="true" onchange="if (this.value=='stop') startPlaying(); else stopPlaying();"><option value="start">start</option><option value="stop">stop</option></select>
+			<select data-role="slider" id="mode" data-mini="true" onchange="testMode=this.value=='test'"><option value="listen">listen</option><option value="test">test</option></select>
+			<div id="scoreSection">Score<div id="score">0</div></div>
+		</div>
+	</div>
+	
+	<div data-role="panel" id="optionsPanel" data-position="right" data-display="overlay" data-dismissible="false" data-swipe-close="false">
+		<div data-role="rangeslider">
+			<label for="startOctave">Octave range:</label>
+			<input type="range" id="startOctave" min="1" max="8" value="3" onchange="startOctave=Number(this.value)">
+			<input type="range" id="endOctave" min="1" max="8" value="4" onchange="endOctave=Number(this.value)">
+		</div>
+		<label for="notation">Notation:</label>
+		<select id="notation" onchange="notation=this.selectedIndex; changeNotesList(); $('#notes option').eq(1).attr('selected','selected');
+		$('#notes').selectmenu('refresh');" data-mini="true">
+		<option>Letter (&#9839;)</option>
+		<option>Letter (&#9837;)</option>
+		<option>Solfege (&#9839;)</option>
+		<option>Solfege (&#9837;)</option>
+		<option>Integer</option>
+		</select>
+		<div data-role="controlgroup" data-type="horizontal">
+		<input type="checkbox" id="useColours" onchange="useColours=this.checked" data-mini="true">
+		<label for="useColours">Use colours</label>
+		<input type="checkbox" id="editColours" data-mini="true" onchange="editColours=this.checked; if (editColours) {$('#useColours').prop('checked',true).checkboxradio('refresh'); useColours=true;} showPalette(editColours)">
+		<label for="editColours">Edit colours</label>
+		</div>
+		<a href="#confirmReset" data-rel="popup" data-role="button" data-mini="true">Reset to default colours</a>
+		<div data-role="controlgroup" data-type="horizontal">
+		<label for="selectNotes">Select notes</label>
+		<input type="checkbox" id="selectNotes" onchange="selectNotes=this.checked; showTestNotes()" data-mini="true">
+		<label for="octaveTolerant">Octave-tolerant</label>
+		<input type="checkbox" id="octaveTolerant" onchange="octaveTolerant=this.checked" data-mini="true">
+		</div>
+		<div data-role="popup" id="confirmReset" data-overlay-theme="a" data-theme="c">
+			<div data-role="header" data-theme="a">
+				<h1>Reset?</h1>
+			</div>
+			<div data-role="content" data-theme="d">
+				<p>Are you sure you want to reset colours to their defaults?</p>
+				<p>You can only undo this with much labour and wasted time.</p>
+				<a data-role="button" data-inline="true" data-mini="true" data-rel="back"  data-theme="b" onclick="colours = DEFAULT_COLOURS.slice(0); if (editColours) showPalette(true)">OK</a>    
+				<a data-role="button" data-inline="true" data-mini="true" data-rel="back" data-theme="c">Cancel</a>
+			</div>
+		</div>
+		<div data-role="fieldcontain">
+		<label for="volume">Vol:</label><input type="range" id="volume" min="0" max="10" value="5" onchange="setVolume(this.value)">
+		</div>
+		<div data-role="fieldcontain">
+		<label for="speed">Speed:</label><input type="range" id="speed" min="1" max="9" value="5" onchange="if (timer!=null) changeSpeed(this.value)">
+		</div>
+		<div data-role="fieldcontain"><label for="tone">Tone:</label><select data-role="slider" data-mini="true" id="tone" onchange="pianoTone=this.value=='piano'"><option value="piano">piano</option><option value="sine">sine</option></select></div>
+		<a data-role="button" data-mini="true" data-rel="close">Close</a>
+			
+	</div>
+
+</div>
+
+<input id="colorPicker" type="color" onchange="changeColour(this.value)">
+</body>
+</html>

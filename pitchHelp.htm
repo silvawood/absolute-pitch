@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html manifest="pitchHelp.manifest">
+<head>
+<title>Help for Absolute Pitch: an ear training web app for learning perfect pitch</title>
+<meta charset="UTF-8" />
+<meta name="description" content="Free Absolute Pitch web application game for musicians to learn perfect pitch" />
+<meta name="keywords" content="absolute pitch, perfect pitch, pitch, learn, software, application, app, ear training, education, Silvawood, learning, music, musicians, musicianship, musicality, test, piano, piano keyboard, octaves, chords, keys, game, web application, web app, single page application, SPA" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<link rel="stylesheet" href="help.css" />
+</head>
+
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed" data-tap-toggle="false">
+<a class="ui-btn-right" href="#contents" data-role="button" data-inline="true">Contents</a>
+<div id="contents" data-role="panel" data-position="left" data-display="overlay">
+<ul data-role="listview" data-inset="false">
+<li><a href='#intro' data-ajax="false">Introduction</a></li>
+<li><a href='#playpiano' data-ajax="false">Playing the Piano Keyboard</a></li>
+<li><a href='#learnnote' data-ajax="false">Learning a Note</a></li>
+<li><a href='#taketest' data-ajax="false">Taking a Test</a></li>
+<li><a href='#tips' data-ajax="false">Tips for Acquiring Absolute Pitch</a></li>
+<li><a href='#playingcontrols' data-ajax="false">Playing Controls</a></li>
+<li><a href='#learningoptions' data-ajax="false">Learning Options</a></li>
+<li><a href='#support' data-ajax="false">Support</a></li>
+<li><a href='#copyright' data-ajax="false">Copyright and Disclaimer</a></li>
+</ul>
+</div>
+<h1>Help for Absolute Pitch</h1>
+</div>
+<div data-role="content">
+<h3 id="intro">Introduction</h3>
+<p>Welcome to <a href="index.htm" target="_blank">Absolute Pitch</a>, a music application designed to help you acquire absolute or perfect pitch. This is the musical ability to name any note played, without the aid of a reference note. Perfect pitch therefore differs from relative pitch, with which a musician can identify notes by using knowledge of the intervals between them.</p>
+<p>Musicians with extremely good relative pitch can give results indistinguishable from those having absolute pitch, but they are always at a disadvantage in having to hear a reference tone, such as Middle A, first. You may have noticed this in purely vocal concerts, where the musicians hold tuning forks to their ears before starting a new movement.</p>
+<p>Having absolute pitch makes it easier for a composer or performer, especially of atonal music, to retain and hear complex melodies and harmonies in his or her head (Schoenberg mentions his ability in a letter; Boulez is well known for it). For any singer, it obviates the use of a reference pitch, and ensures that performing without instrumental accompaniment, such as in a barbershop quartet, doesn&apos;t risk a gradual sliding out of tune during a piece.</p>
+<p>The Absolute Pitch software works by presenting notes in an atonal, rather than tonal, context to reduce the possibility of using relative pitch. You learn a particular note by listening to a random sequence that includes the note. Whenever the note is played, your aural recognition is reinforced by visual stimuli that serve to connect the sound of the note with its name and position on the piano keyboard. When you are confident that you know the note well enough, you can proceed to take a test.</p>
+<p>With its clear piano keyboard, Absolute Pitch can also be used as an easy-to-use virtual instrument, which you can play using the mouse, computer keyboard, or touchscreen.</p>
+
+<h3 id="playpiano">Playing the Piano Keyboard</h3>
+
+<p>With the <b>Listen/Test</b> slider in the <b>Listen</b> position, Absolute Pitch can be used simply to play music. You can play notes using the mouse or the keyboard. The Ctrl key acts as a sustain pedal, preventing a note from stopping immediately when you release it.</p>
+<p><b>Using the Mouse</b></p>
+<p>To play a note, click on it.</p>
+<p>To play a glissando (sliding up or down the scale) keep the mouse button pressed down whilst moving the mouse up or down the piano.</p>
+<p><b>Using the Keyboard</b></p>
+<p>With the computer keyboard, you can play notes and chords with both hands over a three-octave range, starting with the lowest octave shown. The positions of the keys on the computer keyboard correspond to the positions of the notes on the piano keyboard.</p>
+<p>The following key sequence will play the first one and a half octaves:</p>
+<p><b>Q 2 W 3 E R 5 T 6 Y 7 U I 9 O 0 P [</b></p>
+<p>The following key sequence plays the remaining one and a half octaves:</p>
+<p><b>\ A Z S X C F V G B N J M K , L . /</b></p>
+<p><b>Note:</b> Due to the way computer keyboards are wired, some combinations of chords and notes may not be possible using the keyboard alone. You can compensate by using the keyboard and mouse together.</p>
+
+<h3 id="selectnote">Specify the note(s) you want to learn</h3>
+<p>To select the note or notes you want to learn:</p>
+<ol>
+<li>Press the <b>Options</b> button to display the Options panel.</li>
+<li>On the Options panel, press the <b>Select Notes</b> toggle button.</li>
+<p>The currently selected notes are highlighted in the first octave of the piano keyboard.</p>
+<li>Press any piano notes to toggle their inclusion in your list of notes.</li>
+<li>When you have finished, press the <b>Select Notes</b> box again and then close the Options panel.</li>
+</ol>
+<h3 id="learnnote">Learn the selected note(s)</h3>
+<p>To learn the sound of your selected note(s):</p>
+<ol>
+<li>Ensure the <b>Listen/Test</b> switch is in the <b>Listen</b> position.</li>
+<li>Click the <b>Start</b> button.</li>
+</ol>
+<p>A random sequence of notes is played continuously.  Each time the note you selected is played, its corresponding key is highlighted on the piano, and its name appears in the panel above the piano keyboard.  This will help you to reinforce the association between the sound of the note and its name.</p>
+<ul>
+<li>To change the speed at which the notes are played, move the <b>Speed</b> slider.</li>
+<li>To stop playing at any time, click the <b>Stop</b> button.</li>
+<li>To change the octave range over which notes are played, select different octave numbers from the <b>Octave Range</b> lists. To begin with, you should restrict yourself to a range of one or two octaves.</li>
+<li>When you feel that you can remember the note, press the <b>Listen/Test</b> switch to move it to the <b>Test</b> position.</li>
+</ul>
+
+<h3 id="taketest">Taking a Test</h3>
+<p>To take a test:</p>
+<ol><li>If you haven&apos;t done so already, <a href="#selectnote" data-ajax="false">select the note or notes</a> you will be required to identify in the test.</li>
+<li>If the <a href="#OctaveTolerant" data-ajax="false"><b>Octave-Tolerant Test</b> option</a> is on, which it is by default, then only the note name matters in your test responses: if, for example, middle C is sounded, you can click on a C in any octave as your correct response. If you turn this option off, then your correct response must be the same note in the same octave.</li>
+<li>Click the <b>Test</b> option button.  If you have stopped note-playing after &apos;learning the note&apos;, click the <b>Start</b> button to start the test. </li>
+<li>Whenever you hear the note played, quickly press its corresponding key on the piano keyboard.
+<ul>
+<li>If you correctly identified the note, the <b>Current Score</b> displayed is incremented and the test continues.</li>
+<li>If you failed to click a key when the note was played, the message <b>Missed</b> appears over the piano keyboard, and the test stops.</li>
+<li>If you failed to click the correct key when the note was played, the message <b>Wrong</b> appears over the piano keyboard, and the test stops.</li>
+</ul>
+<li>If you are doing well and want to stop, click the <b>Stop</b> button to end the test.</li>
+</ol>
+
+<h3 id="tips">Tips for Acquiring Absolute Pitch</h3>
+<ol>
+<li><b>Do</b> listen to atonal or twelve-tone music, and try to identify any notes you have recently learned.  This will improve your ability to recognize notes in different contexts, rather like understanding speech in different dialects.</li>
+<li><b>Don&apos;t</b> cram note learning.  Stick to a &apos;note-a-day&apos; regimen, and think about today&apos;s note as often as you can during the day.</li>
+<li><b>Don&apos;t</b> become disheartened by your mistakes.  Making mistakes is part of the learning process, which is cyclical.  Like the price of a share on the stock market, there may be may short term &apos;ups and downs&apos;, even though the long-term trend is upwards.</li>
+<li><b>Do</b> vary the instruments you use with Absolute Pitch.  </li>
+<li><b>Do</b> concentrate on <i>both</i> the aural and visual aspects of Absolute Pitch.</li>
+<li>Try these opposing ways of listening to a note sequence, to see which works best for you:</li>
+<li>Keep each note played in the foreground of your listening, concentrating equally on the sound of each.</li>
+<li>Only keep your &apos;learning note&apos; in the foreground, allowing all other notes to become a background blur.  Hearing your &apos;learning note&apos; should then become a shock, like unexpectedly seeing the face of a loved-one.</li>
+</ol>
+
+<h3 id="playingcontrols">Playing Controls</h3>
+<p><b>Start/Stop switch</b></p>
+<p>Starts or stops a listening or test session.</p>
+<p><b>Listen/Test switch</b></p>
+<p>In the <b>Listen</b> position, you will be played a continuous sequence of random notes containing the note or notes you want to learn. Each time a note selected in your notes list is played, it is highlighted on the piano keyboard and its name is displayed.</p>
+<p>Switch to the <b>Test</b> position when you are confident you can recognize the note or notes selected in the <b>Notes</b> list. Every time one of these notes is played, you must respond immediately by either pressing the Space bar or clicking the correct note on the piano keyboard.</p>
+<h3 id="optionspanel">Options</h3>
+<p><b>Octave Range slider</b></p>
+<p>Move the slider to change the octaves at which the piano keyboard starts and ends, which also corresponds to the range of notes played during a listening or test session.</p>
+<p><b>Notation list</b></p>
+<p>The system used for displaying the names of notes.</p>
+<p><b>Use Colours toggle</b></p>
+<p>Turn this on if you want piano notes and note names to appear in different colours, as an extra visual aid to complement your auditory memory. Turn it off for all notes to appear in the same colour, red.</p>
+<p><b>Edit Colours toggle</b></p>
+<p>Press this option to display on the piano the colours used for each note. You can edit these colours in two ways. Firstly, you can swap note colours around by pressing a note on the piano and then dragging and dropping it to a different note. Secondly, you can assign a note a colour not currently used by double-clicking it on the piano. This displays a dialog from which you can select the colour you want.</p>
+<p><b>Reset to Default Colours button</b></p>
+<p>Press this button to return all note colours to their defaults.</p>
+<p><b>Select Notes toggle</b></p>
+<p>When this toggle is on, the currently selected notes are highlighted in the first octave of the piano keyboard. You can then press any piano notes to toggle their inclusion in your list of notes. When you have finished, press the <b>Select Notes</b> toggle again.</p>
+<p><b><a id="OctaveTolerant"></a>Octave-Tolerant toggle</b></p>
+<p>Turn this on if you want the test marking to treat notes in different octaves as identical. For example, if the test plays a middle C and you respond by clicking a C in another octave, your answer is still marked as correct and the test continues. Turn it off to opt for strict marking, meaning that you must click the correct note in the correct octave.</p>
+<p><b>Volume bar</b></p>
+<p>Adjust the slider to change how loudly notes are played.</p>
+<p><b>Speed bar</b></p>
+<p>Adjust the slider to change the speed at which notes are played.</p>
+<p><b>Tone switch</b></p>
+<p>Use this switch to change the instrument on which sounds are played: either piano or sine wave.</p>
+<h3 id="support">Support</h3>
+<p>If you have any questions, criticisms or praise, then please send an e-mail to <img src="../images/context.png"></p>
+<h3 id="copyright">Copyright Notice and Disclaimer</h3>
+<p>Thanks to the <a href="http://theremin.music.uiowa.edu/MISpiano.html">University of Iowa Electronic Music Studios</a> for their excellent piano samples used by this app.</p>
+<p><b>Copyright Notice</b></p>
+<p>All contents of this Absolute Pitch application are Copyright &copy; 2013 Julian Wood, All Rights Reserved.</p>
+<p><b>Disclaimer of Warranty and Liability</b></p>
+<p>Use of Absolute Pitch indicates acceptance of the following, in which the Software refers to Absolute Pitch.</p>
+<p><b>No Warranties</b></p>
+<p>The author of the Software expressly disclaims any warranty for the Software. The Software and any related documentation is provided "as is" without warranty of any kind, either express or implied, including, without limitation, the implied warranties or merchantability, fitness for a particular purpose, or non-infringement. The entire risk arising out of use or performance of the Software remains with you.</p>
+<p><b>No Liability for Damages</b></p>
+<p>In no event shall the author of the Software be liable for any damages whatsoever arising out of the use of or inability to use this product, even if the author of the Software has been advised of the possibility of such damages.</p>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</body>
+</html>

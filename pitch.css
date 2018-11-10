@@ -1,0 +1,28 @@
+body {overflow: hidden}
+#piano {
+	border: medium solid black;
+	padding: 0;
+	margin: 0 auto;
+    cursor: pointer;
+	display: block;
+	background-color: white;
+	}
+#noteName {
+	background-color: black;
+	border: 0px;
+	border-radius: 5px;
+	margin: 5px;
+	text-align: center;
+	overflow: hidden;
+	box-shadow: inset 0 0 5px 5px #888;
+	}
+.ui-content {background-color: #888; padding:0 !important;}
+#confirmReset {width: 10em}
+#colorPicker {position:absolute; left:-9999px; top:-9999px}
+#footer {text-align: center; margin-left: 0.4em; margin-right: 0.4em}
+#footerbuttons {float: left !important; margin-top: 0.2em !important}
+#scoreSection {float:right; font-size: 0.9em}
+#notation {margin-bottom: 0.5em !important}
+#confirmReset  .ui-content {padding: 0.5em !important}
+.st_sharethis {position: absolute}
+#windows {position: absolute; left:0; top:0}
